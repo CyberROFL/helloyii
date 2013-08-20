@@ -34,4 +34,8 @@ $this->pageTitle = Yii::app()->name . ' - Login';
 
 <?php $this->endWidget(); ?>
 
+<div class="row">
+    <?php echo CHtml::link('Register', Yii::app()->createUrl('register')); ?>
+</div>
+
 </div>
