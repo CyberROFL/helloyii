@@ -15,7 +15,7 @@ class UserIdentity extends CUserIdentity
      */
     public function authenticate()
     {
-        $user = User::model()->find('LOWER(email)=?', array(strtolower($this->email)));
+        $user = User::model()->find('LOWER(email)=?', array(strtolower($this->username)));
 
         if (null === $user)
         {
