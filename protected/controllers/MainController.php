@@ -30,7 +30,7 @@ class MainController extends CController
     {
         return array(
             array('allow',  // allow all users to access 'index' and 'view' actions.
-                'actions' => array('index'),
+                'actions' => array('index', 'get_companies'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated users to access all actions

@@ -41,3 +41,22 @@ $this->pageTitle = Yii::app()->name . ' - Register';
 <?php $this->endWidget(); ?>
 
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#User_company').autocomplete({
+            serviceUrl: 'get_companies/',
+            minChars: 2,
+            delimiter: /(,|;)\s*/, // regex or character
+            maxHeight: 400,
+            width: 300,
+            zIndex: 9999,
+            deferRequestBy: 300, //miliseconds
+            type: 'POST',
+            params: {}, //aditional parameters
+            noCache: true, //default is false, set to true to disable caching
+            // callback function:
+            onSelect: function(value, data){}
+        });
+    });
+</script>
