@@ -29,6 +29,9 @@ class User extends CActiveRecord
         return '{{accounts}}';
     }
 
+    /**
+     * @return actions to perform before saving ie: hash password
+     */
     public function beforeSave()
     {
         $hash = $this->hashPassword($this->password);

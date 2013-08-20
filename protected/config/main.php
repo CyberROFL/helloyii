@@ -33,6 +33,7 @@ return array(
         'user' => array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
+            'loginUrl' => 'login',
         ),
     ),
 );
