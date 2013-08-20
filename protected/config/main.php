@@ -16,6 +16,8 @@ return array(
             'urlFormat'=>'path',
             'showScriptName' => false,
             'rules'=>array(
+                'login' => 'user/login',
+                'register' => 'user/register',
                 'main'=>'main/main',
                 'get_companies' => 'main/get_companies',
             ),
