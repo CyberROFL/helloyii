@@ -4,6 +4,7 @@ class LogoutAction extends CAction
 {
     public function run()
     {
-        echo 'logout';
+        Yii::app()->user->logout();
+        $this->redirect(Yii::app()->homeUrl);
     }
 }
