@@ -22,6 +22,7 @@ return array(
             'showScriptName' => false,
             'rules'=>array(
                 'login' => 'user/login',
+                'logout' => 'user/logout',
                 'register' => 'user/register',
                 'main'=>'main/main',
                 'get_companies' => 'main/get_companies',
