@@ -4,6 +4,8 @@ class MainAction extends CAction
 {
     public function run()
     {
-        echo 'main';
+        $users = User::model()->findAll();
+
+        $this->controller->render('main', array('users' => $users));
     }
 }
