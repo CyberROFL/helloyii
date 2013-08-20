@@ -29,7 +29,7 @@ $this->pageTitle = Yii::app()->name . ' - Login';
     </div>
 
     <div class="row">
-        <?php echo CHtml::submitButton('Login'); ?>
+        <?php echo CHtml::submitButton('Enter'); ?>
     </div>
 
 <?php $this->endWidget(); ?>
