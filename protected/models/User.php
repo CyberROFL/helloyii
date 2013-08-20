@@ -29,6 +29,14 @@ class User extends CActiveRecord
         return '{{accounts}}';
     }
 
+    public function beforeSave()
+    {
+        $hash = $this->hashPassword($this->password);
+        $this->password = $hash;
+
+        return true;
+    }
+
     /**
      * @return array validation rules for model attributes.
      */
@@ -41,7 +49,7 @@ class User extends CActiveRecord
 
             array('password2', 'required', 'on' => 'register'),
             array('password', 'compare', 'compareAttribute' => 'password2', 'on' => 'register'),
-            array('email', 'unique', 'on' => 'register'),
+            array('email', 'unique'),
         );
     }
 

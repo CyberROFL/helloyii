@@ -10,17 +10,14 @@ class RegisterAction extends CAction
         }
         else
         {
-            $user = new User;
+            $user = new User('register');
 
             if (isset($_POST['User']))
             {
                 $user->attributes = $_POST['User'];
 
-                if ($user->validate())
+                if ($user->validate() && $user->save())
                 {
-                    $user->password = $user->hashPassword($user->password);
-                    $user->save();
-
                     $this->controller->redirect(Yii::app()->createUrl('user/login'));
                 }
             }
