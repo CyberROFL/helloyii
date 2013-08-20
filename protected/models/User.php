@@ -10,11 +10,13 @@ class User extends CActiveRecord
      * @var string $company
      */
 
+    public $passwd2;
+
     /**
      * Returns the static model of the specified AR class.
      * @return CActiveRecord the static model class
      */
-    public static function model($className=__CLASS__)
+    public static function model($className = __CLASS__)
     {
         return parent::model($className);
     }
@@ -32,12 +34,25 @@ class User extends CActiveRecord
      */
     public function rules()
     {
-        // NOTE: you should only define rules for those attributes that
-        // will receive user inputs.
         return array(
             array('email, password', 'required'),
-            array('email, password', 'length', 'max'=>100),
+            array('email, password', 'length', 'max' => 100),
+            array('email', 'email'),
+            array('password', 'compare', 'compareAttribute'=>'password2', 'on'=>'register'),
             array('company', 'safe'),
+        );
+    }
+
+    /**
+     * @return array customized attribute labels (name => label)
+     */
+    public function attributeLabels()
+    {
+        return array(
+            'id' => 'Id',
+            'email' => 'E-mail',
+            'password' => 'Password',
+            'company' => 'Company',
         );
     }
 
@@ -48,7 +63,7 @@ class User extends CActiveRecord
      */
     public function validatePassword($password)
     {
-        return CPasswordHelper::verifyPassword($password,$this->password);
+        return CPasswordHelper::verifyPassword($password, $this->password);
     }
 
     /**

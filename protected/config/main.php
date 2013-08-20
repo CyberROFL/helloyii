@@ -1,15 +1,15 @@
 <?php
 
 return array(
-    'name'=>'helloyii',
-    'defaultController'=>'main',
+    'name' => 'helloyii',
+    'defaultController' => 'main',
 
-    'import'=>array(
+    'import' => array(
         'application.models.*',
     ),
 
-    'components'=>array(
-        'db'=>array(
+    'components' => array(
+        'db' => array(
             'connectionString' => 'mysql:host=localhost;dbname=user24669_yii',
             'emulatePrepare' => true, // needed by some MySQL installations
             'username' => 'user24669_yii',
@@ -17,20 +17,20 @@ return array(
             'charset' => 'utf8',
             'tablePrefix' => 'helloyii_',
         ),
-        'urlManager'=>array(
-            'urlFormat'=>'path',
+        'urlManager' => array(
+            'urlFormat' => 'path',
             'showScriptName' => false,
             'rules'=>array(
+                'register' => 'user/register',
                 'login' => 'user/login',
                 'logout' => 'user/logout',
-                'register' => 'user/register',
-                'main'=>'main/main',
+                'main' => 'main/main',
                 'get_companies' => 'main/get_companies',
             ),
         ),
-        'user'=>array(
+        'user' => array(
             // enable cookie-based authentication
-            'allowAutoLogin'=>true,
+            'allowAutoLogin' => true,
         ),
     ),
 );
