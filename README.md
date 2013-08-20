@@ -9,7 +9,7 @@ helloyii is a simple web-application based on [Yii framework](http://www.yiifram
 * MySQL 
 
 ## Current progress
-- [ ] Sign up page: http://example.com/register
-- [ ] Sign in page: http://example.com/login
-- [ ] Main page: http://example.com/main
-- [ ] API for companies (JSON): http://example.com/get_companies
+- [x] Sign up page: http://example.com/register
+- [x] Sign in page: http://example.com/login
+- [x] Main page: http://example.com/main
+- [x] API for companies (JSON): http://example.com/get_companies
