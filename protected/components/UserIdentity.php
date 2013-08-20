@@ -28,7 +28,7 @@ class UserIdentity extends CUserIdentity
         else
         {
             $this->_id = $user->id;
-            $this->email = $user->email;
+            $this->username = $user->email;
             $this->errorCode = self::ERROR_NONE;
         }
 

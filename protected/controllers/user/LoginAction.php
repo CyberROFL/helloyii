@@ -4,18 +4,25 @@ class LoginAction extends CAction
 {
     public function run()
     {
-        $model = new LoginForm;
-
-        if (isset($_POST['LoginForm']))
+        if (!Yii::app()->user->isGuest)
         {
-            $model->attributes = $_POST['LoginForm'];
-
-            if ($model->validate() && $model->login())
-            {
-                $this->redirect(Yii::app()->createUrl('main/main'));
-            }
+            $this->controller->redirect(Yii::app()->homeUrl);
         }
+        else
+        {
+            $model = new LoginForm;
 
-        $this->controller->render('login', array('model' => $model));
+            if (isset($_POST['LoginForm']))
+            {
+                $model->attributes = $_POST['LoginForm'];
+
+                if ($model->validate() && $model->login())
+                {
+                    $this->controller->redirect(Yii::app()->homeUrl);
+                }
+            }
+
+            $this->controller->render('login', array('model' => $model));
+        }
     }
 }

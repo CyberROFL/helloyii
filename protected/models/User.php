@@ -10,7 +10,7 @@ class User extends CActiveRecord
      * @var string $company
      */
 
-    public $passwd2;
+    public $password2;
 
     /**
      * Returns the static model of the specified AR class.
@@ -35,11 +35,13 @@ class User extends CActiveRecord
     public function rules()
     {
         return array(
-            array('email, password', 'required'),
-            array('email, password', 'length', 'max' => 100),
+            array('email, password, company', 'required'),
+            array('email, password, company', 'length', 'max' => 100),
             array('email', 'email'),
-            array('password', 'compare', 'compareAttribute'=>'password2', 'on'=>'register'),
-            array('company', 'safe'),
+
+            array('password2', 'required', 'on' => 'register'),
+            array('password', 'compare', 'compareAttribute' => 'password2', 'on' => 'register'),
+            array('email', 'unique', 'on' => 'register'),
         );
     }
 
@@ -52,6 +54,7 @@ class User extends CActiveRecord
             'id' => 'Id',
             'email' => 'E-mail',
             'password' => 'Password',
+            'password2'=>'Repeat password',
             'company' => 'Company',
         );
     }
