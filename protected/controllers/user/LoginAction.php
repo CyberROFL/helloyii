@@ -12,7 +12,7 @@ class LoginAction extends CAction
 
             if ($model->validate() && $model->login())
             {
-                $this->redirect(Yii::app()->user->returnUrl);
+                $this->redirect(Yii::app()->createUrl('main/main'));
             }
         }
 

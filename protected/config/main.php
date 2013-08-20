@@ -3,6 +3,7 @@
 return array(
     'name' => 'helloyii',
     'defaultController' => 'main',
+    'homeUrl' => 'main/index',
 
     'import' => array(
         'application.components.*',
