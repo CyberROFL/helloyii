@@ -75,5 +75,9 @@ $this->pageTitle = Yii::app()->name . ' - Register';
             $('#User_password2').parent().append('<div class="errorMessage">Repeat password must be repeated exactly.</div>');
             return false;
         }
+        if (!validatePassword($('#User_company').val())) {
+            $('#User_company').parent().append('<div class="errorMessage">Company cannot be blank.</div>');
+            return false;
+        }
     });
 </script>

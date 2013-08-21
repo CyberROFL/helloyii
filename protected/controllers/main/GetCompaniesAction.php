@@ -7,7 +7,7 @@ class GetCompaniesAction extends CAction
         $query = $_POST['query'];
 
         $companies = Yii::app()->db->createCommand()
-                         ->select('company')
+                         ->selectDistinct('company')
                          ->from('helloyii_accounts')
                          ->where(array('like', 'company', '%'.$query.'%'))
                          ->queryAll();
