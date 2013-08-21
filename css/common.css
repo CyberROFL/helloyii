@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    background: #ffffff;
+    color: #555555;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clear {
+    clear: both;
+}
+
+#wrap {
+    min-width: 100%;
+    min-height: 100%;
+    margin-bottom: -60px;
+}
+
+.content {
+    min-width: 800px;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+#header {
+    height: 80px;
+    color: #9fa2a6;
+    font-size: 30px;
+}
+
+#in-header {
+    height: 40px;
+    line-height: 40px;
+}
+
+#page {
+    padding-bottom: 100px;
+}
+
+#in-page {
+}
+
+#footer {
+    height: 60px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+#in-footer {
+    height: 20px;
+    line-height: 20px;
+}
+
+#header, #footer {
+    background: #f5f5f5;
+}
+
+.form {
+}
+
+.form span.required {
+    color: #d60000;
+}
+
+.form .row {
+    margin: 10px 0;
+}
+
+.form .row .errorMessage {
+    font-size: 13px;
+    color: #d60000;
+}
+
+.form .note {
+}
+
+.form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.form .checkbox label {
+    display: inline;
+}
+
+.form input[type='text'],
+.form input[type='password']  {
+    width: 300px;
+    height: 22px;
+    padding: 2px 4px;
+    border: 1px solid #a5a5a5;
+}
+
+.form input[type='submit'] {
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    padding: 2px 4px;
+    border: 1px solid #a5a5a5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#users {
+    max-width: 800px;
+    margin: auto;
+}
+
+#users ul {
+    list-style: none;
+}
+
+#users ul li {
+    border-top: 1px solid #e1e1e1;
+    padding: 20px;
+}
+
+#users ul li:last-child {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+#user ul li .user {
+    overflow: hidden;
+}
+
+#users ul li .user .id, #users ul li .user .email {
+    float: left;
+}
+
+#users ul li .user .id {
+    width: 100px;
+}
+
+#users ul li .user .email {
+    margin: 0 10px;
+}
+
+#users ul li .user .company {
+    float: right;
+    margin-left: 10px;
+}
+
+#copyright {
+    float: right;
+}
