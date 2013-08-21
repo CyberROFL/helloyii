@@ -16,6 +16,7 @@ $this->pageTitle = Yii::app()->name . ' - Main';
                     <div class="id"><?php echo $user->id ?></div>
                     <div class="email"><?php echo $user->email ?></div>
                     <div class="company"><?php echo $user->company ?></div>
+                    <div class="clear"></div>
                 </div>
             </li>
         <?php endforeach; ?>
