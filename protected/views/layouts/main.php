@@ -8,6 +8,7 @@
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/client.validation.js"></script>
 
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     </head>

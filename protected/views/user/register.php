@@ -6,7 +6,7 @@ $this->pageTitle = Yii::app()->name . ' - Register';
 
 <div class="form">
 
-<?php $form = $this->beginWidget('CActiveForm', array('id' => 'register-form')); ?>
+<?php $form = $this->beginWidget('CActiveForm', array('id' => 'User_')); ?>
 
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
@@ -58,5 +58,22 @@ $this->pageTitle = Yii::app()->name . ' - Register';
             // callback function:
             onSelect: function(value, data){}
         });
+    });
+
+    $('#User_').submit(function () {
+        $('#User_').find('.errorMessage').remove();
+
+        if (!validateEmail($('#User_email').val())) {
+            $('#User_email').parent().append('<div class="errorMessage">Email is not a valid email address.</div>');
+            return false;
+        }
+        if (!validatePassword($('#User_password').val())) {
+            $('#User_password').parent().append('<div class="errorMessage">Password cannot be blank.</div>');
+            return false;
+        }
+        if (!validatePassword($('#User_password').val(), $('#User_password2').val())) {
+            $('#User_password2').parent().append('<div class="errorMessage">Repeat password must be repeated exactly.</div>');
+            return false;
+        }
     });
 </script>
