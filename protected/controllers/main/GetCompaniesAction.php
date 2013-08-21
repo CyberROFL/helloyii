@@ -4,6 +4,11 @@ class GetCompaniesAction extends CAction
 {
     public function run()
     {
+        if (!isset($_POST['query']))
+        {
+            Yii::app()->end();
+        }
+
         $query = $_POST['query'];
 
         $companies = Yii::app()->db->createCommand()
