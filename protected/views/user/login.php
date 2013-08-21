@@ -6,7 +6,7 @@ $this->pageTitle = Yii::app()->name . ' - Login';
 
 <div class="form">
 
-<?php $form = $this->beginWidget('CActiveForm', array('id' => 'login-form')); ?>
+<?php $form = $this->beginWidget('CActiveForm', array('id' => 'LoginForm_')); ?>
 
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
@@ -39,3 +39,20 @@ $this->pageTitle = Yii::app()->name . ' - Login';
 </div>
 
 </div>
+
+<script>
+    $('#LoginForm_').submit(function () {
+        $('#LoginForm_').find('.errorMessage').remove();
+
+        if (!validateEmail($('#LoginForm_email').val())) {
+            $('#LoginForm_email').parent().append('<div class="errorMessage">Email is not a valid email address.</div>');
+            return false;
+        }
+        if (!validatePassword($('#LoginForm_password').val())) {
+            $('#LoginForm_password').parent().append('<div class="errorMessage">Password cannot be blank.</div>');
+            return false;
+        }
+
+        return true;
+    });
+</script>
