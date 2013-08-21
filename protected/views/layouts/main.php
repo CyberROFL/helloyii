@@ -15,7 +15,19 @@
     <body>
         <div id="wrap">
             <div id="page">
-                <?php echo $content; ?>
+                <div id="header">
+                    <div id="in-header" class="content center">
+                        <?php echo CHtml::encode($this->pageTitle); ?>
+                    </div>
+                </div>
+                <div id="in-page" class="content center">
+                    <?php echo $content; ?>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="in-footer" class="content center">
+                <div id="copyright">&copy; &laquo;helloyii&raquo;, 2013</div>
             </div>
         </div>
     </body>
