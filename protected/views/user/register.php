@@ -49,7 +49,7 @@ $this->pageTitle = Yii::app()->name . ' - Register';
             minChars: 2,
             delimiter: /(,|;)\s*/, // regex or character
             maxHeight: 400,
-            width: 300,
+            width: 310,
             zIndex: 9999,
             deferRequestBy: 300, //miliseconds
             type: 'POST',

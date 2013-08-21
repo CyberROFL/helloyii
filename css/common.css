@@ -154,3 +154,41 @@ html, body {
 #copyright {
     float: right;
 }
+
+.autocomplete-suggestions {
+    margin:6px 0 0 6px;
+    /* IE6 fix: */
+    _background: none;
+    _margin: 1px 0 0 0;
+}
+
+.autocomplete-suggestion {
+    border: 1px solid #999;
+    border-top: none;
+    background: #ffffff;
+    cursor: default;
+    text-align: left;
+    max-height: 350px;
+    overflow: auto;
+    margin: -6px 6px 6px -6px;
+    /* IE6 specific: */
+    _height: 350px;
+    _margin: 0;
+    _overflow-x: hidden;
+}
+
+.autocomplete-suggestions .autocomplete-selected {
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.autocomplete-suggestions div {
+    padding:2px 5px;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+.autocomplete-suggestions strong {
+    font-weight: normal;
+    color:#3399ff;
+}
